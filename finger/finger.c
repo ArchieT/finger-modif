@@ -256,6 +256,15 @@ static void do_local(int argc, char *argv[], int *used) {
 					used[i] = 1;
 				}
 			}
+            else {
+                struct passwd *pw_what_if_no_match_but_by_name_exists;
+                if (used[i] >=0 && (pw_what_if_no_match_but_by_name_exists = getpwnam(argv[i]))) {
+                    if (!check_nofinger(pw_what_if_no_match_but_by_name_exists)) {
+                        enter_person(pw_what_if_no_match_but_by_name_exists);
+                        used[i] = 1;
+                    }
+                }
+            }
 
 	/* list errors */
 	for (i = 0; i < argc; i++)
