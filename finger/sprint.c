@@ -41,6 +41,7 @@ char sprint_rcsid[] = "$Id: sprint.c,v 1.10 1999/12/12 18:59:33 dholland Exp $";
 
 #include <sys/types.h>
 #include <sys/time.h>
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
